@@ -1,0 +1,9 @@
+<suite name = "Cucumber Project" >
+    <test name = "Amazon Test" >
+        <parameter name ="browser" value="Chrome" />
+        <parameter name="amount" value="0 TL" />
+        <classes>
+            <class name = "runners.TestRunner"/>
+        </classes>
+    </test>
+</suite>
