@@ -4,7 +4,6 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;
 import org.testng.Reporter;
-import org.testng.annotations.Parameters;
 
 import java.util.Properties;
 
@@ -14,7 +13,6 @@ public class Hooks {
     @Before
     public void before(){
         String browser = Reporter.getCurrentTestResult().getTestContext().getCurrentXmlTest().getParameter("browser");
-        Properties properties = ConfigReader.initializeProperties();
         m_driver = DriverFactory.initializeDriver(browser);
     }
     @After

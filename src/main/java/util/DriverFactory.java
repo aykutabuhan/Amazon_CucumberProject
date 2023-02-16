@@ -11,8 +11,7 @@ import java.util.Properties;
 public class DriverFactory {
     private static WebDriver ms_driver;
 
-    public static WebDriver initializeDriver(String browser){
-        Properties properties = ConfigReader.getProperties();
+    public static WebDriver initializeDriver(String browser) {
 
         if (browser.equalsIgnoreCase("Chrome")){
             System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
@@ -26,7 +25,7 @@ public class DriverFactory {
             ms_driver = new FirefoxDriver();
         }
 
-        String url = properties.getProperty("url");
+        String url = ConfigReader.getProperty("url");
         ms_driver.get(url);
         ms_driver.manage().window().maximize();
         ms_driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
